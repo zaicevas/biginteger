@@ -207,7 +207,7 @@ then we do substractions and, with additional calculations, get the final answer
     bint tmp_a = {list_cpy(a.list), positive}, sub_final, ten_laipsnis, ten,
     freeable, result, tmp2, j, vienas = int_to_bint(1);
     if (is_zero(a))
-        return string_to_bint("0");
+        return int_to_bint(0);
     tmp_a.sign = positive;
     b.sign = positive;
     ten_laipsnis = int_to_bint(1);
@@ -391,7 +391,7 @@ char* int_to_string(int a) {
         arr[0] = '-';
     }
     for (; i>=iki; i--) {
-        char final = tmp ;
+        char final = tmp % 10;
         if (negative)
             final *= -1;
         arr[i] = (char) final + 0x30;
@@ -413,6 +413,11 @@ bint int_to_bint(int a) {
 
 void print_bint(bint a) {
     char *tmp = bint_to_string(a);
-	printf("%s", tmp);
+	  printf("%s", tmp);
     free(tmp);
+}
+
+void println_bint(bint a) {
+    print_bint(a);
+    printf("\n");
 }

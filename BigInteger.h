@@ -26,6 +26,7 @@ bint string_to_bint(char*);            /* converts a string to a big integer */
 bint int_to_bint(int);                /* converts an integer to a big integer */
 char* bint_to_string(bint);            /* converts a big integer to an ascii string */
 void print_bint(bint);
+void println_bint(bint);
 
 /* ALGEBRAIC OPERATIONS: */
 bint bint_add(bint, bint);            /* a + b */
